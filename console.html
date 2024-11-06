@@ -1,0 +1,32 @@
+<script>
+  const sum = 1 + 1;
+  console.log(sum);
+
+  const pref = ["北海道", "青森県", "岩手県"]
+  console.log(pref);
+  console.table(pref);
+
+  console.clear();
+  console.error("エラーです");
+  console.warn("警告です");
+
+  //カウンター・時間経過
+  let dice;
+  console.time("dice");
+  do {
+      dice = Math.floor(Math.random() * 6) + 1;
+      console.log(dice);
+      console.count("dice");
+      console.timeLog("dice");
+  } while(dice != 1);
+  console.timeEnd("dice");
+
+  //アサート
+  let tax = 1.1;
+  const price = 1000;
+
+  //tax = 20.5;
+  const intax = price * tax;
+  console.log(intax);
+  console.assert(price * tax === 1100, "計算が間違えています")
+</script>
