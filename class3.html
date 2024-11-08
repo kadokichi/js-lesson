@@ -1,0 +1,18 @@
+<script>
+  class Item {
+    name;
+    stock;
+    // 省略したい引数の場合は後ろに記述
+    constructor(name, stock = 0) {
+      this.name = name;
+      this.stock = stock;
+    }
+  }
+  
+  let peach = new Item("もも", 5);
+  console.log(peach.name);
+  console.log(peach.stock);
+
+  let banana = new Item("バナナ");
+  console.log(banana.stock);
+</script>
