@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>JavaScript入門</title>
+  </head>
+  <body>
+    <script>
+      class Person {
+        name;
+        birth;
+
+        constructor(name, birth) {
+        this.name = name;
+        this.birth = birth;
+        }
+
+        getAge() {
+          const now = new Date();
+          let age = now.getFullYear() - this.birth.getFullYear();
+
+          //誕生日がまだの場合は年齢から1引く
+          const thisBirth = new Date(
+            now.getFullYear(),
+            this.birth.getMonth(),
+            this.birth.getDate()
+          );
+
+          if (now < thisBirth) {
+            age--;
+          } 
+
+          return age;
+        }
+      }
+
+      let tanaka = new Person("田中", new Date(2000, 0, 3));
+      console.log(tanaka.birth);
+      console.log(tanaka.getAge());
+
+      let sato = new Person("佐藤", new Date(2000, 10, 9));
+      console.log(sato.birth);
+      console.log(sato.getAge());
+    </script>
+  </body>
+</html>
