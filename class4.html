@@ -1,0 +1,20 @@
+<script>
+  class Item {
+    name;
+    stock;
+  }
+  // extendsで継承できる
+  class Food extends Item {
+    limit_date;
+  }
+  
+  let peach = new Food();
+  peach.limit_date = 5;
+  peach.name = "もも";
+  console.log(peach.name);
+
+  //JSでは親クラスでも子クラスを使用できてしまう
+  let pencil = new Item();
+  pencil.limit_date = 5;
+  console.log(pencil.limit_date);
+</script>
