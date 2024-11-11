@@ -20,6 +20,15 @@ let goTimer = () => {
 
   let milli = now.getTime() - start.getTime();
   let seconds = Math.floor(milli / 1000);
+  let minutes = Math.floor(seconds / 60);
+  let hours = Math.floor(minutes / 60);
 
-  document.getElementById('timer').innerHTML = seconds;
+  seconds = seconds - minutes * 60;
+  minutes = minutes - hours * 60;
+
+  hours = addZero(hours);
+  seconds = addZero(seconds);
+  minutes = addZero(minutes);
+
+  document.getElementById('timer').innerHTML = hours + ':' + minutes + ':' + seconds;
 }
