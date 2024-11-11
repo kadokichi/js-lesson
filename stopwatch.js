@@ -7,12 +7,23 @@ let addZero = (value) => {
 }
 
 let start;
+let timer_id;
 
-document.getElementById('start_stop').addEventListener('click', () => {
-  start = new Date();
+document.getElementById('start_stop').addEventListener('click', function() {
+  if (this.innerHTML === 'START') {
+    start = new Date();
 
-  setInterval(goTimer, 10);
-
+    timer_id = setInterval(goTimer, 10);
+  //STOPボタンを作る
+    this.innerHTML = 'STOP';
+    this.classList.remove('btn-primary');
+    this.classList.add('btn-danger');
+  } else {
+    clearInterval(timer_id);
+    this.innerHTML = 'START';
+    this.classList.remove('btn-danger');
+    this.classList.add('btn-primary');
+  }
 });
 
 let goTimer = () => {
