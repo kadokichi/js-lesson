@@ -6,14 +6,17 @@ let addZero = (value) => {
   return value;
 }
 
-let now = new Date();
-let seconds = now.getSeconds();
-seconds = addZero(seconds);
+document.getElementById('start_stop').addEventListener('click', () => {
+  let now = new Date();
+  let seconds = now.getSeconds();
+  seconds = addZero(seconds);
 
-let minutes = now.getMinutes();
-minutes = addZero(minutes);
+  let minutes = now.getMinutes();
+  minutes = addZero(minutes);
 
-let hours = now.getHours();
-hours = addZero(hours);
+  let hours = now.getHours();
+  hours = addZero(hours);
 
-document.getElementById('timer').innerHTML = hours + ':' + minutes + ':' + seconds;
+  document.getElementById('timer').innerHTML = hours + ':' + minutes + ':' + seconds;
+});
+
