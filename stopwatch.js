@@ -7,16 +7,14 @@ let addZero = (value) => {
 }
 
 document.getElementById('start_stop').addEventListener('click', () => {
-  let now = new Date();
-  let seconds = now.getSeconds();
-  seconds = addZero(seconds);
+  let start = new Date();
 
-  let minutes = now.getMinutes();
-  minutes = addZero(minutes);
+  setInterval(goTimer, 10);
 
-  let hours = now.getHours();
-  hours = addZero(hours);
 
-  document.getElementById('timer').innerHTML = hours + ':' + minutes + ':' + seconds;
 });
 
+let goTimer = () => {
+  let now = new Date();
+  document.getElementById('timer').innerHTML = now.getTime();
+}
