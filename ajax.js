@@ -6,7 +6,21 @@ ajax.send(null);
 ajax.onreadystatechange = function() {
   if (ajax.readyState === XMLHttpRequest.DONE && ajax.status === 200) {
     for (let i=0; i<this.response.length; i++) {
-      alert(this.response[i].path);
+      let data = this.response[i];
+
+      let img = document.createElement('img');
+      img.setAttribute('src', data.path);
+
+      let caption = document.createElement('div');
+      caption.className = 'inner';
+      caption.innerHTML = '<p>' + data.caption + '<span>' + data.name + '</span></p>';
+
+      div = document.createElement('div');
+      div.className = 'photo';
+      div.appendChild(img);
+      div.appendChild(caption);
+
+      document.getElementById('img_unit').appendChild(div);
     }
   }
 }

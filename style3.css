@@ -51,6 +51,6 @@ header h1 {
     padding: 20px; /* 要素内余白を 20px に */
 }
 .inner span {
-    color: #666; /* 文字色をグレーに */
+    color: white; /* 文字色をグレーに */
     margin-left: 10px; /* 左に 10px の余白 */
 }
